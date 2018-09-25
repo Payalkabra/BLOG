@@ -1,0 +1,17 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<h1>BLOG</h1>  
+
+
+ <form action='{% url 'index' %}' method='post'>
+ {% csrf_token %}
+ {{ form.as_p }}
+ <button type='submit'>
+ Create Blog</button>
+ </form>
+<form class="searchfield" method="get" action="/search">
+	<input type="text" name="q" value="{{ request.GET.q }}">
+	<button type = "submit">Search</button>
+ </form>
+{% endblock %}

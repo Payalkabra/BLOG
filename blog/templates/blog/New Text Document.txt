@@ -1,0 +1,18 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<h1>UserForm Search</h1>  
+
+<form action="/usernew" method="post">
+	{% csrf_token %}
+	{{ form.as_p }}
+	<input type="submit" value="Submit" />
+</form>
+
+<form class="searchfield" method="get" action="/search">
+	<input type="text" name="q" value="{{ request.GET.q }}">
+	<button type = "submit">Search</button>
+ </form>
+<p>Result: {{ result }}</p>
+
+{% endblock %}
