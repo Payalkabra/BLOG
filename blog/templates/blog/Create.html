@@ -1,0 +1,12 @@
+{% extends 'base_generic.html' %}
+{% block content %}
+<div class="create-blog">
+ <h2>Create blog</h2>
+ <form class="site-form" action = '{%url 'Create' %}' method = 'post'>
+  {%csrf_token%}
+  {{form}}
+  <input type = 'text' name = 'title'>
+  <input type = 'submit' value = 'create'> 
+ </form>  
+</div>
+{% endblock %}

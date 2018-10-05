@@ -3,15 +3,12 @@
 {% block content %}
 <h1>BLOG</h1>  
 
-
- <form action='{% url 'index' %}' method='post'>
+<form action='{% url 'index' %}' method='get'>
  {% csrf_token %}
  {{ form.as_p }}
- <button type='submit'>
- Create Blog</button>
+ <a href = 'http://127.0.0.1:8000/blog/details'>list of blogs</a></br>
+ <a href = 'search'>search</a></br>
+ <a href = 'http://127.0.0.1:8000/blog/Create'>create</a>
  </form>
-<form class="searchfield" method="get" action="/search">
-	<input type="text" name="q" value="{{ request.GET.q }}">
-	<button type = "submit">Search</button>
- </form>
+ 
 {% endblock %}

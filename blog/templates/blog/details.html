@@ -1,6 +1,8 @@
-<!#{% for p in posts %}
 
-#<b>{{p.title }}<!</b>
 
-<!#written by {{p.author.name}} on {{p.date}} {% endforloop %}</br>
 
+
+ {% for p in posts %}
+  <a href = 'http://127.0.0.1:8000/blog/details/body'><b>{{p.title }}</b></a>
+  written by {{p.author.name}} on {{p.date}}</br> 
+ {% endfor %}/
